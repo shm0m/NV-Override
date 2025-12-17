@@ -1,0 +1,1 @@
+savedcmd_dalton_drv.ko := ld -r -m elf_x86_64 -z noexecstack --no-warn-rwx-segments --build-id=sha1  -T /usr/src/linux-headers-6.14.0-37-generic/scripts/module.lds -o dalton_drv.ko dalton_drv.o dalton_drv.mod.o .module-common.o

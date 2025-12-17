@@ -31,7 +31,6 @@
 
 #define DRIVER_NAME "dalton_drv"
 #define DRIVER_DESC "Daltonism Correction Virtual Display"
-#define DRIVER_DATE "20241217"
 #define DRIVER_MAJOR 1
 #define DRIVER_MINOR 0
 
@@ -303,7 +302,7 @@ static const struct file_operations dalton_fops = {
     .compat_ioctl = drm_compat_ioctl,
     .poll = drm_poll,
     .read = drm_read,
-    .llseek = no_llseek,
+    .llseek = noop_llseek,
     .mmap = drm_gem_mmap,
 };
 
@@ -311,7 +310,6 @@ static const struct drm_driver dalton_driver = {
     .driver_features = DRIVER_MODESET | DRIVER_GEM | DRIVER_ATOMIC,
     .name = DRIVER_NAME,
     .desc = DRIVER_DESC,
-    .date = DRIVER_DATE,
     .major = DRIVER_MAJOR,
     .minor = DRIVER_MINOR,
     .fops = &dalton_fops,
