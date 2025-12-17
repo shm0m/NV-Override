@@ -351,6 +351,8 @@ static int __init dalton_init(void) {
     ret = drm_dev_register(drm, 0);
     if (ret) goto cleanup_mode;
     
+    // drm_fbdev_generic_setup(drm, 32); // Removed for Kernel 6.14 compatibility
+
     DRM_INFO("DaltonFix Driver Initialized.\n");
     return 0;
 
@@ -385,4 +387,4 @@ module_init(dalton_init);
 module_exit(dalton_exit);
 
 MODULE_LICENSE("GPL");
-MODULE_AUTHOR("Antigravity");
+MODULE_AUTHOR("Shaima DEROUICH");
